@@ -139,9 +139,9 @@ namespace MonoTorrent.Client
             this.engine = engine;
 
             this.endCheckEncryptionCallback = ClientEngine.MainLoop.Wrap(EndCheckEncryption);
-            this.endSendMessageCallback = (a, b, c) => ClientEngine.MainLoop.Queue(() => EndSendMessage(a, b, c));
-            this.endCreateConnectionCallback = (a, b, c) => ClientEngine.MainLoop.Queue (() => EndCreateConnection (a, b, c));
-            this.incomingConnectionAcceptedCallback = (a, b, c) => ClientEngine.MainLoop.Queue (() => IncomingConnectionAccepted(a, b, c));
+            this.endSendMessageCallback = (a, b, c) => ClientEngine.MainLoop.Queue(() => EndSendMessage(a, c));
+            this.endCreateConnectionCallback = (a, b, c) => ClientEngine.MainLoop.Queue (() => EndCreateConnection (a, c));
+            this.incomingConnectionAcceptedCallback = (a, b, c) => ClientEngine.MainLoop.Queue (() => IncomingConnectionAccepted(a, c));
 
             this.handshakeSentCallback = PeerHandshakeSent;
             this.peerHandshakeReceivedCallback = (a, b, c) => ClientEngine.MainLoop.Queue (() => PeerHandshakeReceived (a, b, c));
@@ -171,7 +171,7 @@ namespace MonoTorrent.Client
             NetworkIO.EnqueueConnect(connection, endCreateConnectionCallback, c);
         }
 
-        private void EndCreateConnection(bool succeeded, int count, object state)
+        private void EndCreateConnection(bool succeeded, object state)
         {
             AsyncConnectState connect = (AsyncConnectState)state;
             pendingConnects.Remove(connect);
@@ -281,7 +281,7 @@ namespace MonoTorrent.Client
             }
         }
 
-        private void EndSendMessage(bool succeeded, int count, object state)
+        private void EndSendMessage(bool succeeded, object state)
         {
             PeerId id = (PeerId)state;
             if (!succeeded)
@@ -451,7 +451,7 @@ namespace MonoTorrent.Client
         /// This method is called when the ClientEngine recieves a valid incoming connection
         /// </summary>
         /// <param name="result"></param>
-        private void IncomingConnectionAccepted(bool succeeded, int count, object state)
+        private void IncomingConnectionAccepted(bool succeeded, object state)
         {
             PeerId id = (PeerId)state;
 
@@ -596,8 +596,6 @@ namespace MonoTorrent.Client
 
         internal void TryConnect()
         {
-            TorrentManager m = null;
-            
             // If we have already reached our max connections globally, don't try to connect to a new peer
             while (OpenConnections < this.MaxOpenConnections && this.HalfOpenConnections < this.MaxHalfOpenConnections) {
                 // Check each torrent manager in turn to see if they have any peers we want to connect to
