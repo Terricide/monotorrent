@@ -8,11 +8,11 @@ namespace MonoTorrent.Common
     {
         #region Member Variables
 
-        private long fileHashed;
-        private long fileTotal;
-        private long overallHashed;
-        private long overallTotal;
-        private string file;
+        private readonly long fileHashed;
+        private readonly long fileTotal;
+        private readonly long overallHashed;
+        private readonly long overallTotal;
+        private readonly string file;
 
         #endregion Member Variables
 

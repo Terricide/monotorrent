@@ -41,7 +41,7 @@ namespace MonoTorrent.Client
     {
         protected static readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(45);
 
-        PiecePicker picker;
+        readonly PiecePicker picker;
 
         protected PiecePicker(PiecePicker picker)
         {

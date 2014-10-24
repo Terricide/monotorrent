@@ -18,8 +18,8 @@ namespace MonoTorrent.Client.PieceWriters
         }
 
         private int capacity;
-        private List<CachedBlock> cachedBlocks;
-        private PieceWriter writer;
+        private readonly List<CachedBlock> cachedBlocks;
+        private readonly PieceWriter writer;
 
 
         public int Capacity

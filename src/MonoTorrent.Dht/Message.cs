@@ -41,12 +41,12 @@ namespace MonoTorrent.Dht.Messages
     {
         internal static bool UseVersionKey = true;
 
-        private static BEncodedString EmptyString = "";
+        private static readonly BEncodedString EmptyString = "";
         protected static readonly BEncodedString IdKey = "id";
-        private static BEncodedString TransactionIdKey = "t";
-        private static BEncodedString VersionKey = "v";
-        private static BEncodedString MessageTypeKey = "y";
-        private static BEncodedString DhtVersion = VersionInfo.DhtClientVersion;
+        private static readonly BEncodedString TransactionIdKey = "t";
+        private static readonly BEncodedString VersionKey = "v";
+        private static readonly BEncodedString MessageTypeKey = "y";
+        private static readonly BEncodedString DhtVersion = VersionInfo.DhtClientVersion;
 
         protected BEncodedDictionary properties = new BEncodedDictionary();
 

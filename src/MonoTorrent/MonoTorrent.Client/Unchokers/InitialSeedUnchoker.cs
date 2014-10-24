@@ -77,11 +77,11 @@ namespace MonoTorrent.Client
 
     class InitialSeedUnchoker : Unchoker
     {
-        List<SeededPiece> advertisedPieces;
-        BitField bitfield;
-        TorrentManager manager;
-        List<ChokeData> peers;
-        BitField temp;
+        readonly List<SeededPiece> advertisedPieces;
+        readonly BitField bitfield;
+        readonly TorrentManager manager;
+        readonly List<ChokeData> peers;
+        readonly BitField temp;
 
         bool PendingUnchoke
         {

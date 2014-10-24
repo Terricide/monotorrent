@@ -46,21 +46,21 @@ namespace MonoTorrent.Client.Tracker
         {
             get { return this.tracker; }
         }
-        private Tracker tracker;
+        private readonly Tracker tracker;
 
 
         public TrackerState OldState
         {
             get { return this.oldState; }
         }
-        private TrackerState oldState;
+        private readonly TrackerState oldState;
 
 
         public TrackerState NewState
         {
             get { return this.newState; }
         }
-        private TrackerState newState;
+        private readonly TrackerState newState;
         #endregion
 
 

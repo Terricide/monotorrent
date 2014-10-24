@@ -31,8 +31,8 @@ namespace MonoTorrent.Common
 {
     public struct FileMapping
     {
-        string source;
-        string destination;
+        readonly string source;
+        readonly string destination;
 
         public string Source
         {

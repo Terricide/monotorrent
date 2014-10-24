@@ -34,7 +34,7 @@ namespace MonoTorrent.Client
 {
     public class TrackerPeersAdded : PeersAddedEventArgs
     {
-        MonoTorrent.Client.Tracker.Tracker tracker;
+        readonly MonoTorrent.Client.Tracker.Tracker tracker;
 
         public MonoTorrent.Client.Tracker.Tracker Tracker
         {

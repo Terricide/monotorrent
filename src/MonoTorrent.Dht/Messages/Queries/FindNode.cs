@@ -39,9 +39,9 @@ namespace MonoTorrent.Dht.Messages
 {
     class FindNode : QueryMessage
     {
-        private static BEncodedString TargetKey = "target";
-        private static BEncodedString QueryName = "find_node";
-        private static ResponseCreator responseCreator = delegate(BEncodedDictionary d, QueryMessage m) { return new FindNodeResponse(d, m); };
+        private static readonly BEncodedString TargetKey = "target";
+        private static readonly BEncodedString QueryName = "find_node";
+        private static readonly ResponseCreator responseCreator = delegate(BEncodedDictionary d, QueryMessage m) { return new FindNodeResponse(d, m); };
 
         public NodeId Target
         {

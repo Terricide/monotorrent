@@ -41,11 +41,11 @@ namespace MonoTorrent.Client.Encryption
     /// </summary>
     class PeerBEncryption : EncryptedSocket
     {
-        private InfoHash[] possibleSKEYs = null;
+        private readonly InfoHash[] possibleSKEYs = null;
         private byte[] VerifyBytes;
 
-        private AsyncCallback gotVerificationCallback;
-        private AsyncCallback gotPadCCallback;
+        private readonly AsyncCallback gotVerificationCallback;
+        private readonly AsyncCallback gotPadCCallback;
 
         public PeerBEncryption(InfoHash[] possibleSKEYs, EncryptionTypes allowedEncryption)
             : base(allowedEncryption)

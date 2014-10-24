@@ -6,7 +6,7 @@ namespace MonoTorrent.Client.Messages
 {
     public class MessageBundle : PeerMessage
     {
-        private List<PeerMessage> messages;
+        private readonly List<PeerMessage> messages;
 
         public List<PeerMessage> Messages
         {

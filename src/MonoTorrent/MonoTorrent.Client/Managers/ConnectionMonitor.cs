@@ -41,11 +41,11 @@ namespace MonoTorrent.Client
     {
         #region Member Variables
 
-        private SpeedMonitor dataDown;
-        private SpeedMonitor dataUp;
-        private object locker = new object();
-        private SpeedMonitor protocolDown;
-        private SpeedMonitor protocolUp;
+        private readonly SpeedMonitor dataDown;
+        private readonly SpeedMonitor dataUp;
+        private readonly object locker = new object();
+        private readonly SpeedMonitor protocolDown;
+        private readonly SpeedMonitor protocolUp;
 
         #endregion Member Variables
 

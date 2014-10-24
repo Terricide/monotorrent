@@ -41,13 +41,13 @@ namespace MonoTorrent.Client
     {
         const int MaxMessageLength = Piece.BlockSize * 4;
 
-        static ICache <ReceiveMessageState> receiveCache = new Cache <ReceiveMessageState> (true).Synchronize ();
-        static ICache <SendMessageState> sendCache = new Cache <SendMessageState> (true).Synchronize ();
+        static readonly ICache <ReceiveMessageState> receiveCache = new Cache <ReceiveMessageState> (true).Synchronize ();
+        static readonly ICache <SendMessageState> sendCache = new Cache <SendMessageState> (true).Synchronize ();
 
-        static AsyncIOCallback MessageLengthReceivedCallback = MessageLengthReceived;
-        static AsyncIOCallback EndSendCallback = EndSend;
-        static AsyncIOCallback MessageBodyReceivedCallback = MessageBodyReceived;
-        static AsyncIOCallback HandshakeReceivedCallback = HandshakeReceived;
+        static readonly AsyncIOCallback MessageLengthReceivedCallback = MessageLengthReceived;
+        static readonly AsyncIOCallback EndSendCallback = EndSend;
+        static readonly AsyncIOCallback MessageBodyReceivedCallback = MessageBodyReceived;
+        static readonly AsyncIOCallback HandshakeReceivedCallback = HandshakeReceived;
 
         public static void EnqueueSendMessage (IConnection connection, IEncryption encryptor, PeerMessage message, IRateLimiter rateLimiter, ConnectionMonitor peerMonitor, ConnectionMonitor managerMonitor, AsyncIOCallback callback, object state)
         {

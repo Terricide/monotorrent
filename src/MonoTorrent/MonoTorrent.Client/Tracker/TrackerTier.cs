@@ -12,7 +12,7 @@ namespace MonoTorrent.Client.Tracker
 
         private bool sendingStartedEvent;
         private bool sentStartedEvent;
-        private List<Tracker> trackers;
+        private readonly List<Tracker> trackers;
 
         #endregion Private Fields
 

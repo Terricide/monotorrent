@@ -6,8 +6,8 @@ namespace MonoTorrent.Tracker
 {
     public class InfoHashTrackable : ITrackable
     {
-        private InfoHash infoHash;
-        private string name;
+        private readonly InfoHash infoHash;
+        private readonly string name;
 
         public InfoHashTrackable(Torrent torrent)
         {

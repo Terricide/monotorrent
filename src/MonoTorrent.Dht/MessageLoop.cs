@@ -52,21 +52,21 @@ namespace MonoTorrent.Dht
                 Message = message;
                 SentAt = DateTime.MinValue;
             }
-            public IPEndPoint Destination;
-            public Message Message;
+            public readonly IPEndPoint Destination;
+            public readonly Message Message;
             public DateTime SentAt;
         }
 
         internal event EventHandler<SendQueryEventArgs> QuerySent;
 
-        List<IAsyncResult> activeSends = new List<IAsyncResult>();
-        DhtEngine engine;
+        readonly List<IAsyncResult> activeSends = new List<IAsyncResult>();
+        readonly DhtEngine engine;
         DateTime lastSent;
-        DhtListener listener;
-        private object locker = new object();
-        Queue<SendDetails> sendQueue = new Queue<SendDetails>();
-        Queue<KeyValuePair<IPEndPoint, Message>> receiveQueue = new Queue<KeyValuePair<IPEndPoint, Message>>();
-        MonoTorrentCollection<SendDetails> waitingResponse = new MonoTorrentCollection<SendDetails>();
+        readonly DhtListener listener;
+        private readonly object locker = new object();
+        readonly Queue<SendDetails> sendQueue = new Queue<SendDetails>();
+        readonly Queue<KeyValuePair<IPEndPoint, Message>> receiveQueue = new Queue<KeyValuePair<IPEndPoint, Message>>();
+        readonly MonoTorrentCollection<SendDetails> waitingResponse = new MonoTorrentCollection<SendDetails>();
         
         private bool CanSend
         {

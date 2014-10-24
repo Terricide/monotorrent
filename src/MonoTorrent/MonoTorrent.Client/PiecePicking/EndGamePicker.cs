@@ -41,7 +41,7 @@ namespace MonoTorrent.Client
     // From this list we will make requests for all the blocks until the piece is complete.
     public class EndGamePicker : PiecePicker
     {
-        static Predicate<Request> TimedOut = delegate (Request r) { return r.Block.RequestTimedOut; };
+        static readonly Predicate<Request> TimedOut = delegate (Request r) { return r.Block.RequestTimedOut; };
         static Predicate<Request> NotRequested = delegate (Request r) { return r.Block.RequestedOff == null; };
 
         // Struct to link a request for a block to a peer
@@ -54,7 +54,7 @@ namespace MonoTorrent.Client
                 Block = block;
             }
             public Block Block;
-            public PeerId Peer;
+            public readonly PeerId Peer;
         }
 
         // This list stores all the pieces which have not yet been completed. If a piece is *not* in this list
@@ -62,7 +62,7 @@ namespace MonoTorrent.Client
         List<Piece> pieces;
 
         // These are all the requests for the individual blocks
-        List<Request> requests;
+        readonly List<Request> requests;
 
         public EndGamePicker()
             : base(null)

@@ -8,8 +8,8 @@ namespace MonoTorrent.Client
 	{
 
 		#region Private Fields
-		private TorrentManager owningTorrent; //The torrent to which this manager belongs
-		private List<Uri> inactivePeerList = new List<Uri>();
+		private readonly TorrentManager owningTorrent; //The torrent to which this manager belongs
+		private readonly List<Uri> inactivePeerList = new List<Uri>();
 
 		/// <summary>
 		/// Provides access to the list of URIs we've marked as inactive

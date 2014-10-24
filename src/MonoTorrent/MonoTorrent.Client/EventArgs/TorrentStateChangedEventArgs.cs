@@ -47,7 +47,7 @@ namespace MonoTorrent.Client
         {
             get { return this.oldState; }
         }
-        private TorrentState oldState;
+        private readonly TorrentState oldState;
 
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace MonoTorrent.Client
         {
             get { return this.newState; }
         }
-        private TorrentState newState;
+        private readonly TorrentState newState;
         #endregion
 
 

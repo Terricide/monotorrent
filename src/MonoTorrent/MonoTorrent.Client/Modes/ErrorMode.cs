@@ -14,8 +14,8 @@ namespace MonoTorrent.Client
     }
     public class Error
     {
-        Exception exception;
-        Reason reason;
+        readonly Exception exception;
+        readonly Reason reason;
         public Error(Reason reason, Exception exception)
         {
             this.reason = reason;

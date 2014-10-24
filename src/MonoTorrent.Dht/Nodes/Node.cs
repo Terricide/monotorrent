@@ -1,4 +1,4 @@
-#if !DISABLE_DHT
+﻿#if !DISABLE_DHT
 //
 // Node.cs
 //
@@ -45,8 +45,8 @@ namespace MonoTorrent.Dht
     {
         public static readonly int MaxFailures = 4;
 
-        IPEndPoint endpoint;
-        NodeId id;
+        readonly IPEndPoint endpoint;
+        readonly NodeId id;
         int failedCount;
         DateTime lastSeen;
         BEncodedString token;

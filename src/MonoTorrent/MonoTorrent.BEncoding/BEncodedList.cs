@@ -42,7 +42,7 @@ namespace MonoTorrent.BEncoding
     {
         #region Member Variables
 
-        private List<BEncodedValue> list;
+        private readonly List<BEncodedValue> list;
 
         #endregion
 

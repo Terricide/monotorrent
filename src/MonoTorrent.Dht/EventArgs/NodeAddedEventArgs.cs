@@ -7,7 +7,7 @@ namespace MonoTorrent.Dht
 {
     internal class NodeAddedEventArgs : EventArgs
     {
-        private Node node;
+        private readonly Node node;
 
         public Node Node
         {

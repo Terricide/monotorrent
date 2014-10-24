@@ -64,21 +64,21 @@ namespace MonoTorrent.Client
 
 
         #region Member Variables
-        private ClientEngine engine;
+        private readonly ClientEngine engine;
         internal static readonly int ChunkLength = 2096 + 64;   // Download in 2kB chunks to allow for better rate limiting
 
         // Create the callbacks and reuse them. Reduces ongoing allocations by a fair few megs
-        private AsyncMessageReceivedCallback peerHandshakeReceivedCallback;
-        private MessagingCallback handshakeSentCallback;
-        private MessagingCallback messageSentCallback;
+        private readonly AsyncMessageReceivedCallback peerHandshakeReceivedCallback;
+        private readonly MessagingCallback handshakeSentCallback;
+        private readonly MessagingCallback messageSentCallback;
 
-        private AsyncCallback endCheckEncryptionCallback;
-        private AsyncIOCallback endCreateConnectionCallback;
+        private readonly AsyncCallback endCheckEncryptionCallback;
+        private readonly AsyncIOCallback endCreateConnectionCallback;
         internal AsyncIOCallback incomingConnectionAcceptedCallback;
-        private AsyncIOCallback endSendMessageCallback;
+        private readonly AsyncIOCallback endSendMessageCallback;
         internal AsyncMessageReceivedCallback messageReceivedCallback;
 
-        private List<AsyncConnectState> pendingConnects;
+        private readonly List<AsyncConnectState> pendingConnects;
 
         /// <summary>
         /// The number of half open connections

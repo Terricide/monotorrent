@@ -46,7 +46,7 @@ namespace MonoTorrent.Client.Encryption
             public byte[] Buffer;
             public byte[] InitialData;
             public IEncryptor EncSocket;
-            public PeerId Id;
+            public readonly PeerId Id;
             public IEncryption Decryptor;
             public IEncryption Encryptor;
 

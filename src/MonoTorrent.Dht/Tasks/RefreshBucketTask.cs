@@ -9,8 +9,8 @@ namespace MonoTorrent.Dht
 {
     class RefreshBucketTask : Task
     {
-        private Bucket bucket;
-        private DhtEngine engine;
+        private readonly Bucket bucket;
+        private readonly DhtEngine engine;
         private FindNode message;
         private Node node;
         private SendQueryTask task;

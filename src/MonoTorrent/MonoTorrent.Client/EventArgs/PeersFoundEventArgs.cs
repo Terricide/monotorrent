@@ -40,8 +40,8 @@ namespace MonoTorrent
 {
     public class PeersFoundEventArgs : EventArgs
     {
-        private List<Peer> peers;
-        private InfoHash infoHash;
+        private readonly List<Peer> peers;
+        private readonly InfoHash infoHash;
         
         public PeersFoundEventArgs(InfoHash infoHash, List<Peer> peers)
         {

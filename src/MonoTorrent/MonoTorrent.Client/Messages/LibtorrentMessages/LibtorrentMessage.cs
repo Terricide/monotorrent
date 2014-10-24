@@ -36,8 +36,8 @@ namespace MonoTorrent.Client.Messages.Libtorrent
     public abstract class ExtensionMessage : PeerMessage
     {
         internal static readonly byte MessageId = 20;
-        private static Dictionary<byte, CreateMessage> messageDict;
-        private static byte nextId;
+        private static readonly Dictionary<byte, CreateMessage> messageDict;
+        private static readonly byte nextId;
 
         internal static readonly List<ExtensionSupport> SupportedMessages = new List<ExtensionSupport>();
 

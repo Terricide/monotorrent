@@ -83,9 +83,9 @@ namespace SampleClient
 
     public class CustomConnection : IConnection
     {
-        private string name;
-        private Socket s;
-        private bool incoming;
+        private readonly string name;
+        private readonly Socket s;
+        private readonly bool incoming;
         public CustomConnection(Socket s, bool incoming, string name)
         {
             this.name = name;
@@ -189,7 +189,7 @@ namespace SampleClient
     }
     public class ConnectionPair : IDisposable
     {
-        TcpListener socketListener;
+        readonly TcpListener socketListener;
         public IConnection Incoming;
         public IConnection Outgoing;
 
@@ -215,11 +215,11 @@ namespace SampleClient
     }
     public class EngineTestRig
     {
-        private BEncodedDictionary torrentDict;
-        private ClientEngine engine;
-        private CustomListener listener;
-        private TorrentManager manager;
-        private Torrent torrent;
+        private readonly BEncodedDictionary torrentDict;
+        private readonly ClientEngine engine;
+        private readonly CustomListener listener;
+        private readonly TorrentManager manager;
+        private readonly Torrent torrent;
 
         public ClientEngine Engine
         {

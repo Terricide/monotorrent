@@ -47,13 +47,13 @@ namespace MonoTorrent.Client.Connections
 {
     public partial class HttpConnection : IConnection
     {
-        static MethodInfo method = typeof(WebHeaderCollection).GetMethod
+        static readonly MethodInfo method = typeof(WebHeaderCollection).GetMethod
                                 ("AddWithoutValidate", BindingFlags.Instance | BindingFlags.NonPublic);
         private class HttpResult : AsyncResult
         {
-            public byte[] Buffer;
-            public int Offset;
-            public int Count;
+            public readonly byte[] Buffer;
+            public readonly int Offset;
+            public readonly int Count;
             public int BytesTransferred;
 
             public HttpResult(AsyncCallback callback, object state, byte[] buffer, int offset, int count)
@@ -79,15 +79,15 @@ namespace MonoTorrent.Client.Connections
         private HttpRequestData currentRequest;
         private Stream dataStream;
         private bool disposed;
-        private AsyncCallback getResponseCallback;
-        private AsyncCallback receivedChunkCallback;
+        private readonly AsyncCallback getResponseCallback;
+        private readonly AsyncCallback receivedChunkCallback;
         private TorrentManager manager;
         private HttpResult receiveResult;
-        private List<RequestMessage> requestMessages;
+        private readonly List<RequestMessage> requestMessages;
         private HttpResult sendResult;
         private int totalExpected;
-        private Uri uri;
-        private Queue<KeyValuePair<WebRequest, int>> webRequests;
+        private readonly Uri uri;
+        private readonly Queue<KeyValuePair<WebRequest, int>> webRequests;
 
         public byte[] AddressBytes
         {

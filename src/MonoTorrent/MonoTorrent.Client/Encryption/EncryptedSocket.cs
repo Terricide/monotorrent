@@ -84,8 +84,8 @@ namespace MonoTorrent.Client.Encryption
 
         #region Private members
 
-        private RandomNumberGenerator random;
-        private SHA1 hasher;
+        private readonly RandomNumberGenerator random;
+        private readonly SHA1 hasher;
 
         // Cryptors for the handshaking
         private RC4 encryptor = null;
@@ -112,11 +112,11 @@ namespace MonoTorrent.Client.Encryption
         private int bytesReceived;
 
         // Callbacks
-        private AsyncIOCallback doneSendCallback;
-        private AsyncIOCallback doneReceiveCallback;
-        private AsyncCallback doneReceiveYCallback;
-        private AsyncCallback doneSynchronizeCallback;
-        private AsyncIOCallback fillSynchronizeBytesCallback;
+        private readonly AsyncIOCallback doneSendCallback;
+        private readonly AsyncIOCallback doneReceiveCallback;
+        private readonly AsyncCallback doneReceiveYCallback;
+        private readonly AsyncCallback doneSynchronizeCallback;
+        private readonly AsyncIOCallback fillSynchronizeBytesCallback;
 
         // State information for synchronization
         private byte[] synchronizeData = null;

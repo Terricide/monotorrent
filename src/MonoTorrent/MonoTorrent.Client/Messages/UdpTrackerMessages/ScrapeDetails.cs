@@ -36,9 +36,9 @@ namespace MonoTorrent.Client.Messages.UdpTracker
 {
     public class ScrapeDetails
     {
-        private int complete;
-        private int leeches;
-        private int seeds;
+        private readonly int complete;
+        private readonly int leeches;
+        private readonly int seeds;
 
         public int Complete
         {

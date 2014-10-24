@@ -8,7 +8,7 @@ namespace MonoTorrent
 {
     public class InfoHash : IEquatable <InfoHash>
     {
-        static Dictionary<char, byte> base32DecodeTable;
+        static readonly Dictionary<char, byte> base32DecodeTable;
 
         static InfoHash()
         {
@@ -18,7 +18,7 @@ namespace MonoTorrent
                 base32DecodeTable[table[i]] = (byte)i;
         }
 
-        byte[] hash;
+        readonly byte[] hash;
 
         internal byte[] Hash
         {

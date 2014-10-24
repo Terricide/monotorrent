@@ -69,12 +69,12 @@ namespace MonoTorrent.Dht
         bool bootStrap = true;
         TimeSpan bucketRefreshTimeout = TimeSpan.FromMinutes(15);
         bool disposed;
-        MessageLoop messageLoop;
+        readonly MessageLoop messageLoop;
         DhtState state = DhtState.NotReady;
-        RoutingTable table = new RoutingTable();
+        readonly RoutingTable table = new RoutingTable();
         TimeSpan timeout;
-        Dictionary<NodeId, List<Node>> torrents = new Dictionary<NodeId, List<Node>>();
-        TokenManager tokenManager;
+        readonly Dictionary<NodeId, List<Node>> torrents = new Dictionary<NodeId, List<Node>>();
+        readonly TokenManager tokenManager;
 
         #endregion Fields
 

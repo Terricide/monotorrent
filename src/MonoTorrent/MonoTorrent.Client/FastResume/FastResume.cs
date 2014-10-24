@@ -15,8 +15,8 @@ namespace MonoTorrent.Client
         private static readonly BEncodedString BitfieldKey = (BEncodedString)"bitfield";
         private static readonly BEncodedString BitfieldLengthKey = (BEncodedString)"bitfield_length";
 
-        private BitField bitfield;
-        private InfoHash infoHash;
+        private readonly BitField bitfield;
+        private readonly InfoHash infoHash;
 
         public BitField Bitfield
         {

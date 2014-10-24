@@ -41,7 +41,7 @@ namespace MonoTorrent.Client.Messages.UdpTracker
         TimeSpan interval;
         int leechers;
         int seeders;
-        List<Peer> peers;
+        readonly List<Peer> peers;
 
         public override int ByteLength
         {

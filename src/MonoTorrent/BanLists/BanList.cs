@@ -68,7 +68,7 @@ namespace MonoTorrent.Client
 
     public class BanList
     {
-        RangeCollection addresses = new RangeCollection();
+        readonly RangeCollection addresses = new RangeCollection();
 
         public void Add(IPAddress address)
         {

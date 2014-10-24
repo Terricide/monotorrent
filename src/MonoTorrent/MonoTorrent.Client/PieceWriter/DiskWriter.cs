@@ -9,7 +9,7 @@ namespace MonoTorrent.Client.PieceWriters
 {
     public class DiskWriter : PieceWriter
     {
-        private FileStreamBuffer streamsBuffer;
+        private readonly FileStreamBuffer streamsBuffer;
 
         public int OpenFiles
         {

@@ -42,7 +42,7 @@ namespace MonoTorrent.BEncoding
     {
         #region Member Variables
 
-        private SortedDictionary<BEncodedString, BEncodedValue> dictionary;
+        private readonly SortedDictionary<BEncodedString, BEncodedValue> dictionary;
 
         #endregion
 

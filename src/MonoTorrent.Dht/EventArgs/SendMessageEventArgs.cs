@@ -9,9 +9,9 @@ namespace MonoTorrent.Dht
 {
     class SendQueryEventArgs : TaskCompleteEventArgs
     {
-        private IPEndPoint endpoint;
-        private QueryMessage query;
-        private ResponseMessage response;
+        private readonly IPEndPoint endpoint;
+        private readonly QueryMessage query;
+        private readonly ResponseMessage response;
 
         public IPEndPoint EndPoint
         {

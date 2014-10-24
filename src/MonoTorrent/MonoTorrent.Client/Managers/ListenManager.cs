@@ -17,9 +17,9 @@ namespace MonoTorrent.Client
         #region Member Variables
 
         private ClientEngine engine;
-        private MonoTorrentCollection<PeerListener> listeners;
-        private AsyncCallback endCheckEncryptionCallback;
-        private AsyncMessageReceivedCallback handshakeReceivedCallback;
+        private readonly MonoTorrentCollection<PeerListener> listeners;
+        private readonly AsyncCallback endCheckEncryptionCallback;
+        private readonly AsyncMessageReceivedCallback handshakeReceivedCallback;
 
         #endregion Member Variables
 

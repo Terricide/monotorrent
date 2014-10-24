@@ -43,8 +43,8 @@ namespace MonoTorrent.Client.Encryption
     {
         private byte[] VerifyBytes;
 
-        private AsyncCallback gotVerificationCallback;
-        private AsyncCallback gotPadDCallback;
+        private readonly AsyncCallback gotVerificationCallback;
+        private readonly AsyncCallback gotPadDCallback;
 
         public PeerAEncryption(InfoHash InfoHash, EncryptionTypes allowedEncryption)
             : base(allowedEncryption)

@@ -41,7 +41,7 @@ namespace MonoTorrent.Common
 
     public static class Toolbox
     {
-        private static Random r = new Random();
+        private static readonly Random r = new Random();
 		public static int Count<T>(IEnumerable<T> enumerable, Predicate<T> predicate)
 		{
 			int count = 0;

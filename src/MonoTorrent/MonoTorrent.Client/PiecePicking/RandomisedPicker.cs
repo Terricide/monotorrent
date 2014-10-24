@@ -37,7 +37,7 @@ namespace MonoTorrent.Client
 {
     public class RandomisedPicker : PiecePicker
     {
-        Random random = new Random();
+        readonly Random random = new Random();
 
         public RandomisedPicker(PiecePicker picker)
             :base(picker)

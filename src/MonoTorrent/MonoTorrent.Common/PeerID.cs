@@ -120,9 +120,9 @@ namespace MonoTorrent.Common
         static readonly Regex standard = new Regex(@"-(([A-Za-z\~]{2})\d{4})-*");
         static readonly Regex shadows = new Regex(@"(([A-Za-z]{1})\d{3})----*");
         static readonly Regex xbt = new Regex("XBT/d/{3}");
-        private Client client;
-        private string peerId;
-        private string shortId;
+        private readonly Client client;
+        private readonly string peerId;
+        private readonly string shortId;
 
         /// <summary>
         /// The name of the torrent software being used

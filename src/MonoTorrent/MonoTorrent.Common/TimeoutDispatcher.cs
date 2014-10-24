@@ -58,9 +58,9 @@ namespace Mono.Ssdp.Internal
         }
 
         private bool disposed;
-        private AutoResetEvent wait = new AutoResetEvent (false);
+        private readonly AutoResetEvent wait = new AutoResetEvent (false);
 
-        private List<TimeoutItem> timeouts = new List<TimeoutItem> ();
+        private readonly List<TimeoutItem> timeouts = new List<TimeoutItem> ();
 
         public TimeoutDispatcher()
         {

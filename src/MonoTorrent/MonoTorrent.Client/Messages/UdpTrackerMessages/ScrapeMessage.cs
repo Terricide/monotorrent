@@ -38,7 +38,7 @@ namespace MonoTorrent.Client.Messages.UdpTracker
     public class ScrapeMessage : UdpTrackerMessage
     {
         long connectionId;
-        List<byte[]> infohashes;
+        readonly List<byte[]> infohashes;
 
         public override int ByteLength
         {

@@ -131,15 +131,15 @@ namespace MonoTorrent.Client
         private int maxSupportedPendingRequests;
         private MessagingCallback messageReceivedCallback;
         private MessagingCallback messageSentCallback;
-        private ConnectionMonitor monitor;
+        private readonly ConnectionMonitor monitor;
         private Peer peer;
         private PeerExchangeManager pexManager;
         private int piecesSent;
         private int piecesReceived;
         private ushort port;
         private bool processingQueue;
-        private MonoTorrentCollection<PeerMessage> sendQueue;                  // This holds the peermessages waiting to be sent
-        private MonoTorrentCollection<int> suggestedPieces;
+        private readonly MonoTorrentCollection<PeerMessage> sendQueue;                  // This holds the peermessages waiting to be sent
+        private readonly MonoTorrentCollection<int> suggestedPieces;
         private bool supportsFastPeer;
         private bool supportsLTMessages;
         private TorrentManager torrentManager;

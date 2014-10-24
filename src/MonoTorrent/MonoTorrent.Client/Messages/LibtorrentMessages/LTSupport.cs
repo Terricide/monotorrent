@@ -6,8 +6,8 @@ namespace MonoTorrent.Client.Messages.Libtorrent
 {
     public struct ExtensionSupport
     {
-        private byte messageId;
-        private string name;
+        private readonly byte messageId;
+        private readonly string name;
 
         public byte MessageId
         {

@@ -1,4 +1,4 @@
-#if !DISABLE_DHT
+﻿#if !DISABLE_DHT
 //
 // Bucket.cs
 //
@@ -42,14 +42,14 @@ namespace MonoTorrent.Dht
 	/// </summary>
 	internal class Bucket : IComparable<Bucket>, IEquatable<Bucket>
 	{
-        static NodeId Minimum = new NodeId(new byte[20]);
-        static NodeId Maximum = new NodeId(new byte[] { 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255 });
+        static readonly NodeId Minimum = new NodeId(new byte[20]);
+        static readonly NodeId Maximum = new NodeId(new byte[] { 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255 });
 		public const int MaxCapacity = 8;
 
         DateTime lastChanged = DateTime.UtcNow;
-        NodeId max;
-        NodeId min;
-		List<Node> nodes = new List<Node>(MaxCapacity);
+	    readonly NodeId max;
+	    readonly NodeId min;
+	    readonly List<Node> nodes = new List<Node>(MaxCapacity);
         Node replacement;
 
         public DateTime LastChanged

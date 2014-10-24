@@ -35,7 +35,7 @@ namespace MonoTorrent.Client
 {
     public class SortList<T> : IList<T>
     {
-        private List<T> list;
+        private readonly List<T> list;
 
         public SortList()
         {

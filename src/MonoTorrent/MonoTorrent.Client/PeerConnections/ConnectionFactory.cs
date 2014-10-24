@@ -6,8 +6,8 @@ namespace MonoTorrent.Client.Connections
 {
     public static class ConnectionFactory
     {
-        private static object locker = new object();
-        private static Dictionary<string, Type> trackerTypes = new Dictionary<string, Type>();
+        private static readonly object locker = new object();
+        private static readonly Dictionary<string, Type> trackerTypes = new Dictionary<string, Type>();
        
         static ConnectionFactory()
         {

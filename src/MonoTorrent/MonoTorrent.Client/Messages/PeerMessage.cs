@@ -11,7 +11,7 @@ namespace MonoTorrent.Client.Messages
     public delegate PeerMessage CreateMessage(TorrentManager manager);
     public abstract class PeerMessage : Message
     {
-        private static Dictionary<byte, CreateMessage> messageDict;
+        private static readonly Dictionary<byte, CreateMessage> messageDict;
 
         static PeerMessage()
         {

@@ -20,7 +20,7 @@ namespace MonoTorrent.Dht
         //    t.Setup();
         //    t.BucketRefreshTest();
         //}
-        BEncodedString transactionId = "cc";
+        readonly BEncodedString transactionId = "cc";
         DhtEngine engine;
         Node node;
         TestListener listener;

@@ -9,9 +9,9 @@ namespace MonoTorrent.Dht.Tasks
 {
     class ReplaceNodeTask : Task
     {
-        private Bucket bucket;
-        private DhtEngine engine;
-        private Node newNode;
+        private readonly Bucket bucket;
+        private readonly DhtEngine engine;
+        private readonly Node newNode;
 
         public ReplaceNodeTask(DhtEngine engine, Bucket bucket, Node newNode)
         {

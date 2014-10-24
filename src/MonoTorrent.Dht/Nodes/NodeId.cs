@@ -41,7 +41,7 @@ namespace MonoTorrent.Dht
         static readonly Random random = new Random();
 
         BigInteger value;
-        private byte[] bytes;
+        private readonly byte[] bytes;
 
         internal byte[] Bytes
         {

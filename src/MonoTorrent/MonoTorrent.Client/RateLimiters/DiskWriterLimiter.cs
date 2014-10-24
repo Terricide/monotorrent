@@ -36,7 +36,7 @@ namespace MonoTorrent.Client
 {
     class DiskWriterLimiter : IRateLimiter
     {
-        DiskManager manager;
+        readonly DiskManager manager;
 
         public bool Unlimited
         {

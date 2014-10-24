@@ -8,11 +8,11 @@ namespace MonoTorrent.Dht.Tasks
 {
     class SendQueryTask : Task
     {
-        private DhtEngine engine;
-        private Node node;
-        private QueryMessage query;
+        private readonly DhtEngine engine;
+        private readonly Node node;
+        private readonly QueryMessage query;
         private int retries;
-        private int origRetries;
+        private readonly int origRetries;
 
         public int Retries
         {

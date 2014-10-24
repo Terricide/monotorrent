@@ -50,7 +50,7 @@ namespace MonoTorrent.Client.Messages.Libtorrent
             Reject = 2
         }
 
-        BEncodedDictionary dict;
+        readonly BEncodedDictionary dict;
         private eMessageType messageType;
         private int piece;
 

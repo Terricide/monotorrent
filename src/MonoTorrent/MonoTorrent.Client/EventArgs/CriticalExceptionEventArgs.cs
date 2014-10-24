@@ -6,8 +6,8 @@ namespace MonoTorrent.Client
 {
     public class CriticalExceptionEventArgs : EventArgs
     {
-        private ClientEngine engine;
-        private Exception ex;
+        private readonly ClientEngine engine;
+        private readonly Exception ex;
 
 
         public ClientEngine Engine

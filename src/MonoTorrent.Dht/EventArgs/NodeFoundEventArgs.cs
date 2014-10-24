@@ -38,7 +38,7 @@ namespace MonoTorrent.Dht
 {
     internal class NodeFoundEventArgs : EventArgs
     {
-        private Node node;
+        private readonly Node node;
         
         public NodeFoundEventArgs(Node node)
         {

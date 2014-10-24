@@ -38,10 +38,10 @@ namespace MonoTorrent.Client.Connections
 {
     public class IPV4Connection : IConnection
     {
-        private bool isIncoming;
-        private IPEndPoint endPoint;
-        private Socket socket;
-        private Uri uri;
+        private readonly bool isIncoming;
+        private readonly IPEndPoint endPoint;
+        private readonly Socket socket;
+        private readonly Uri uri;
 
         #region Member Variables
 

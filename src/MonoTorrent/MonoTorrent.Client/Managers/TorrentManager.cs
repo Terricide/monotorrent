@@ -75,7 +75,7 @@ namespace MonoTorrent.Client
         internal Queue<int> finishedPieces;     // The list of pieces which we should send "have" messages for
         private bool hashChecked;               // True if the manager has been hash checked
         private int hashFails;                  // The total number of pieces receieved which failed the hashcheck
-        private InfoHash infohash;
+        private readonly InfoHash infohash;
 		internal bool isInEndGame = false;       // Set true when the torrent enters end game processing
         private Mode mode;
         private ConnectionMonitor monitor;      // Calculates download/upload speed
@@ -84,10 +84,10 @@ namespace MonoTorrent.Client
         private string savePath;
         private RateLimiterGroup uploadLimiter;     // Contains the logic to decide how many chunks we can download
         private RateLimiterGroup downloadLimiter;   // Contains the logic to decide how many chunks we can download
-        private TorrentSettings settings;       // The settings for this torrent
+        private readonly TorrentSettings settings;       // The settings for this torrent
         private DateTime startTime;             // The time at which the torrent was started at.
         private Torrent torrent;                // All the information from the physical torrent that was loaded
-        private string torrentSave;             // The path where the .torrent data will be saved when in metadata mode
+        private readonly string torrentSave;             // The path where the .torrent data will be saved when in metadata mode
         private TrackerManager trackerManager;  // The class used to control all access to the tracker
         private int uploadingTo;                // The number of peers which we're currently uploading to
         internal IUnchoker chokeUnchoker; // Used to choke and unchoke peers

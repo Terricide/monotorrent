@@ -40,8 +40,8 @@ namespace MonoTorrent.Client
 {
     class InitialSeedingMode : Mode
     {
-        BitField zero;
-        InitialSeedUnchoker unchoker;
+        readonly BitField zero;
+        readonly InitialSeedUnchoker unchoker;
         
 		public override TorrentState State
 		{

@@ -8,10 +8,10 @@ namespace MonoTorrent.Client.Connections
 {
     public class IPV6Connection : IConnection
     {
-        private bool isIncoming;
-        private Socket socket;
-        private EndPoint endpoint;
-        private Uri uri;
+        private readonly bool isIncoming;
+        private readonly Socket socket;
+        private readonly EndPoint endpoint;
+        private readonly Uri uri;
 
         public IPV6Connection(Uri uri)
         {

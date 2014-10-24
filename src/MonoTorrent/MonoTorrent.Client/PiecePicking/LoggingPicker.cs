@@ -57,7 +57,7 @@ namespace MonoTorrent.Client
             }
         }
 
-        SortList<Request> requests = new SortList<Request>();
+        readonly SortList<Request> requests = new SortList<Request>();
 
         public LoggingPicker(PiecePicker picker)
             : base(picker)

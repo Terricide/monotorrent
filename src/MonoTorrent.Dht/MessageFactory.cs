@@ -42,8 +42,8 @@ namespace MonoTorrent.Dht.Messages
     internal static class MessageFactory
     {
         private static readonly string QueryNameKey = "q";
-        private static BEncodedString MessageTypeKey = "y";
-        private static BEncodedString TransactionIdKey = "t";
+        private static readonly BEncodedString MessageTypeKey = "y";
+        private static readonly BEncodedString TransactionIdKey = "t";
 
         public static int RegisteredMessages
         {
@@ -58,8 +58,8 @@ namespace MonoTorrent.Dht.Messages
             queryDecoders.Add("ping",          delegate(BEncodedDictionary d) { return new Ping(d); });
         }
 
-        private static Dictionary<BEncodedValue, QueryMessage> messages = new Dictionary<BEncodedValue, QueryMessage>();
-        private static Dictionary<BEncodedString, Creator> queryDecoders = new Dictionary<BEncodedString, Creator>();
+        private static readonly Dictionary<BEncodedValue, QueryMessage> messages = new Dictionary<BEncodedValue, QueryMessage>();
+        private static readonly Dictionary<BEncodedString, Creator> queryDecoders = new Dictionary<BEncodedString, Creator>();
 
         internal static bool IsRegistered(BEncodedValue transactionId)
         {

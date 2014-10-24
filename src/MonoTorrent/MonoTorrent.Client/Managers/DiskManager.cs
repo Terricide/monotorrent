@@ -14,19 +14,19 @@ namespace MonoTorrent.Client
 
     public partial class DiskManager : IDisposable
     {
-        private static MainLoop IOLoop = new MainLoop("Disk IO");
+        private static readonly MainLoop IOLoop = new MainLoop("Disk IO");
         #region Member Variables
 
-        private object bufferLock = new object();
-        private Queue<BufferedIO> bufferedReads;
-        private Queue<BufferedIO> bufferedWrites;
-        private ICache<BufferedIO> cache;
+        private readonly object bufferLock = new object();
+        private readonly Queue<BufferedIO> bufferedReads;
+        private readonly Queue<BufferedIO> bufferedWrites;
+        private readonly ICache<BufferedIO> cache;
         private bool disposed;
-        private ClientEngine engine;
-        private MainLoopTask LoopTask;
+        private readonly ClientEngine engine;
+        private readonly MainLoopTask LoopTask;
 
-        private SpeedMonitor readMonitor;
-        private SpeedMonitor writeMonitor;
+        private readonly SpeedMonitor readMonitor;
+        private readonly SpeedMonitor writeMonitor;
 
         internal RateLimiter readLimiter;
         internal RateLimiter writeLimiter;

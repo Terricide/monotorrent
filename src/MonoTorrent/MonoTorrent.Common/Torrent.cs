@@ -49,7 +49,7 @@ namespace MonoTorrent.Common
 
         private BEncodedDictionary originalDictionary;
         private BEncodedValue azureusProperties;
-        private IList<RawTrackerTier> announceUrls;
+        private readonly IList<RawTrackerTier> announceUrls;
         private string comment;
         private string createdBy;
         private DateTime creationDate;
@@ -68,7 +68,7 @@ namespace MonoTorrent.Common
         private string source;
         protected TorrentFile[] torrentFiles;
         protected string torrentPath;
-        private List<string> getRightHttpSeeds;
+        private readonly List<string> getRightHttpSeeds;
         private byte[] metadata;
 
         #endregion Private Fields

@@ -8,7 +8,7 @@ namespace MonoTorrent.Client.Tracker
 {
     public class AnnounceResponseEventArgs : TrackerResponseEventArgs
     {
-        List<Peer> peers;
+        readonly List<Peer> peers;
 
         public List<Peer> Peers
         {

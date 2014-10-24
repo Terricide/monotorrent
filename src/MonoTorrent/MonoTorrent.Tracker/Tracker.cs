@@ -76,10 +76,10 @@ namespace MonoTorrent.Tracker
         private TimeSpan announceInterval;
         private bool disposed;
         private TimeSpan minAnnounceInterval;
-        private RequestMonitor monitor;
+        private readonly RequestMonitor monitor;
         private TimeSpan timeoutInterval;
-        private Dictionary<InfoHash, SimpleTorrentManager> torrents;
-        private BEncodedString trackerId;
+        private readonly Dictionary<InfoHash, SimpleTorrentManager> torrents;
+        private readonly BEncodedString trackerId;
 
 
         #endregion Fields

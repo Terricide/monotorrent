@@ -39,11 +39,11 @@ namespace MonoTorrent.Dht
 {
     internal class TokenManager
     {
-        private byte[] secret;
-        private byte[] previousSecret;
+        private readonly byte[] secret;
+        private readonly byte[] previousSecret;
         private DateTime LastSecretGeneration;
-        private RandomNumberGenerator random;
-        private SHA1 sha1;
+        private readonly RandomNumberGenerator random;
+        private readonly SHA1 sha1;
         private TimeSpan timeout = TimeSpan.FromMinutes(5);
 
         internal TimeSpan Timeout

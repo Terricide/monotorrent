@@ -85,7 +85,7 @@ namespace MonoTorrent.Client
     [TestFixture]
     public class DiskWriterTests
     {
-        byte [] data = new byte [Piece.BlockSize];
+        readonly byte [] data = new byte [Piece.BlockSize];
         DiskManager diskManager;
         ManualResetEvent handle;
         TestRig rig;

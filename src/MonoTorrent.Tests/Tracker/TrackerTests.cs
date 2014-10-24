@@ -20,7 +20,7 @@ namespace MonoTorrent.Tracker
         //    t.MultipleAnnounce();
         //    t.FixtureTeardown();
         //}
-        Uri uri = new Uri("http://127.0.0.1:23456/");
+        readonly Uri uri = new Uri("http://127.0.0.1:23456/");
         MonoTorrent.Tracker.Listeners.HttpListener listener;
         MonoTorrent.Tracker.Tracker server;
         //MonoTorrent.Client.Tracker.HTTPTracker tracker;

@@ -7,8 +7,8 @@ namespace MonoTorrent.Client
 {
     public class NewConnectionEventArgs : TorrentEventArgs
     {
-        private IConnection connection;
-        private Peer peer;
+        private readonly IConnection connection;
+        private readonly Peer peer;
         public IConnection Connection
         {
             get { return connection; }

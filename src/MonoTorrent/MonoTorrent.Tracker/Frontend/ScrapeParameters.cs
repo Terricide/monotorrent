@@ -38,7 +38,7 @@ namespace MonoTorrent.Tracker
 {
     public class ScrapeParameters : RequestParameters
     {
-        private List<InfoHash> hashs;
+        private readonly List<InfoHash> hashs;
         
         public int Count
         {

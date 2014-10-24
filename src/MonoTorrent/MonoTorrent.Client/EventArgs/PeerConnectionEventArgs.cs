@@ -44,7 +44,7 @@ namespace MonoTorrent.Client
         {
             get { return this.peerConnectionId; }
         }
-        private PeerId peerConnectionId;
+        private readonly PeerId peerConnectionId;
 
 
         /// <summary>
@@ -54,9 +54,9 @@ namespace MonoTorrent.Client
         {
             get { return this.connectionDirection; }
         }
-        private Direction connectionDirection;
+        private readonly Direction connectionDirection;
 
-        private String message;
+        private readonly String message;
 
         /// <summary>
         /// Any message that might be associated with this event

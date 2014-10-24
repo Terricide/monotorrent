@@ -42,7 +42,7 @@ namespace MonoTorrent.Client
     /// </summary>
     public class SocketListener : PeerListener
     {
-        private AsyncCallback endAcceptCallback;
+        private readonly AsyncCallback endAcceptCallback;
         private Socket listener;
 
         public SocketListener(IPEndPoint endpoint)

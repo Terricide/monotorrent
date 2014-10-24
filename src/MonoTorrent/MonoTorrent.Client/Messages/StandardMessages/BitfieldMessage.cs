@@ -49,7 +49,7 @@ namespace MonoTorrent.Client.Messages.Standard
         {
             get { return this.bitField; }
         }
-        private BitField bitField;
+        private readonly BitField bitField;
         #endregion
 
 

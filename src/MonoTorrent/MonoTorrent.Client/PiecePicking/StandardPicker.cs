@@ -41,7 +41,7 @@ namespace MonoTorrent.Client
     {
         struct BinaryIndexComparer : IComparer<Piece>
         {
-            int index;
+            readonly int index;
             public BinaryIndexComparer(int index)
             {
                 this.index = index;
@@ -55,7 +55,7 @@ namespace MonoTorrent.Client
             }
         }
 
-        static Predicate<Block> TimedOut = delegate(Block b) { return b.RequestTimedOut; };
+        static readonly Predicate<Block> TimedOut = delegate(Block b) { return b.RequestTimedOut; };
 
         protected SortList<Piece> requests;
 

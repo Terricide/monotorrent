@@ -39,7 +39,7 @@ namespace MonoTorrent.Client
     public static class AllowedFastAlgorithm
     {
         internal static readonly int AllowedFastPieceCount = 10;
-        private static SHA1 hasher = HashAlgoFactory.Create<SHA1>();
+        private static readonly SHA1 hasher = HashAlgoFactory.Create<SHA1>();
 
         internal static MonoTorrentCollection<int> Calculate(byte[] addressBytes, InfoHash infohash, UInt32 numberOfPieces)
         {

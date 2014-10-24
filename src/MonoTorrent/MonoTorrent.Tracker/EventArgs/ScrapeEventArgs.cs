@@ -6,7 +6,7 @@ namespace MonoTorrent.Tracker
 {
     public class ScrapeEventArgs : EventArgs
     {
-        private List<SimpleTorrentManager> torrents;
+        private readonly List<SimpleTorrentManager> torrents;
 
         public List<SimpleTorrentManager> Torrents
         {

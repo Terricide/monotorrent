@@ -51,10 +51,10 @@ namespace MonoTorrent.Client
         
         public static readonly byte [] EmptyBuffer = new byte[0];
 
-        private Queue<byte []> largeMessageBuffers;
-        private Queue<byte []> mediumMessageBuffers;
-        private Queue<byte []> smallMessageBuffers;
-        private Queue<byte []> massiveBuffers;
+        private readonly Queue<byte []> largeMessageBuffers;
+        private readonly Queue<byte []> mediumMessageBuffers;
+        private readonly Queue<byte []> smallMessageBuffers;
+        private readonly Queue<byte []> massiveBuffers;
 
         /// <summary>
         /// The class that controls the allocating and deallocating of all byte[] buffers used in the engine.

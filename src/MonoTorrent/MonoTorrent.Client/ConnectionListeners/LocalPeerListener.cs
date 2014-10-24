@@ -47,7 +47,7 @@ namespace MonoTorrent.Client
         const int MulticastPort = 6771;
         static readonly IPAddress multicastIpAddress = IPAddress.Parse("239.192.152.143");
 
-        private ClientEngine engine;
+        private readonly ClientEngine engine;
         private UdpClient udpClient;
 
         public LocalPeerListener(ClientEngine engine)

@@ -34,7 +34,7 @@ namespace MonoTorrent.Client
 {
     public class PeerExchangePeersAdded : PeersAddedEventArgs
     {
-        private PeerId id;
+        private readonly PeerId id;
 
         public PeerId Id
         {

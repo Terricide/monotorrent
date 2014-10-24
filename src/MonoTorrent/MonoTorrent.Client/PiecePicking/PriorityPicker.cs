@@ -41,8 +41,8 @@ namespace MonoTorrent.Client
 
         struct Files : IComparable<Files>
         {
-            public TorrentFile File;
-            public BitField Selector;
+            public readonly TorrentFile File;
+            public readonly BitField Selector;
 
             public Files(TorrentFile file, BitField selector)
             {
@@ -56,7 +56,7 @@ namespace MonoTorrent.Client
             }
         }
 
-        List<Files> files = new List<Files>();
+        readonly List<Files> files = new List<Files>();
         BitField temp;
 
         public PriorityPicker(PiecePicker picker)

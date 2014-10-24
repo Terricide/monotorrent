@@ -7,8 +7,8 @@ namespace MonoTorrent.Tracker
 {
     public abstract class PeerEventArgs : EventArgs
     {
-        private Peer peer;
-        private SimpleTorrentManager torrent;
+        private readonly Peer peer;
+        private readonly SimpleTorrentManager torrent;
 
         public Peer Peer
         {

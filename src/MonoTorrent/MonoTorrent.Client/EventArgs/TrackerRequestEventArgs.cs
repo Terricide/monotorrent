@@ -7,7 +7,7 @@ namespace MonoTorrent.Client.Tracker
     public abstract class TrackerResponseEventArgs : EventArgs
     {
         private bool successful;
-        TrackerConnectionID id;
+        readonly TrackerConnectionID id;
         private Tracker tracker;
 
         internal TrackerConnectionID Id

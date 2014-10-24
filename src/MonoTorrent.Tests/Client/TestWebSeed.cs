@@ -16,7 +16,7 @@ namespace MonoTorrent.Client
     [TestFixture]
     public class TestWebSeed
     {
-        Regex rangeMatcher = new Regex(@"(\d{1,10})-(\d{1,10})");
+        readonly Regex rangeMatcher = new Regex(@"(\d{1,10})-(\d{1,10})");
         //static void Main(string[] args)
         //{
         //    TestWebSeed s = new TestWebSeed();
@@ -210,7 +210,7 @@ namespace MonoTorrent.Client
             }
         }
 
-        private List<string> requestedUrl = new List<string>();
+        private readonly List<string> requestedUrl = new List<string>();
         private void GotContext(IAsyncResult result)
         {
             try

@@ -123,8 +123,8 @@ namespace MonoTorrent.Client
         public event EventHandler BeginSendStarted;
         public event EventHandler EndSendStarted;
 
-        private Socket s;
-        private bool incoming;
+        private readonly Socket s;
+        private readonly bool incoming;
 
         public int? ManualBytesReceived {
             get; set;
@@ -294,7 +294,7 @@ namespace MonoTorrent.Client
 
     public class ConnectionPair : IDisposable
     {
-        TcpListener socketListener;
+        readonly TcpListener socketListener;
         public CustomConnection Incoming;
         public CustomConnection Outgoing;
 
@@ -322,11 +322,11 @@ namespace MonoTorrent.Client
 
     public class TestRig : IDisposable
     {
-        static Random Random = new Random(1000);
+        static readonly Random Random = new Random(1000);
         static int port = 10000;
         private BEncodedDictionary torrentDict;
-        private ClientEngine engine;
-        private CustomListener listener;
+        private readonly ClientEngine engine;
+        private readonly CustomListener listener;
         private TorrentManager manager;
         private Torrent torrent;
 
@@ -398,7 +398,9 @@ namespace MonoTorrent.Client
         }
 
 
-        string savePath; int piecelength; string[][] tier;
+        readonly string savePath;
+        readonly int piecelength;
+        readonly string[][] tier;
 
         public void AddConnection(IConnection connection)
         {
@@ -448,7 +450,7 @@ namespace MonoTorrent.Client
 
         #region Rig Creation
 
-        TorrentFile[] files;
+        readonly TorrentFile[] files;
         TestRig(string savePath, int piecelength, TestWriter writer, string[][] trackers, TorrentFile[] files)
             : this (savePath, piecelength, writer, trackers, files, false)
         {

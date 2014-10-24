@@ -50,7 +50,7 @@ namespace MonoTorrent.Client.Tracker
         TimeSpan minUpdateInterval;
         TrackerState status;
         TimeSpan updateInterval;
-        Uri uri;
+        readonly Uri uri;
         string warningMessage;
 
         public bool CanAnnounce

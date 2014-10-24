@@ -10,8 +10,8 @@ namespace MonoTorrent.Tracker
     {
         #region Member Variables
 
-        private SpeedMonitor announces;
-        private SpeedMonitor scrapes;
+        private readonly SpeedMonitor announces;
+        private readonly SpeedMonitor scrapes;
 
         #endregion Member Variables
 

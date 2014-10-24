@@ -43,7 +43,7 @@ namespace MonoTorrent.Tracker.Listeners
     {
         #region Fields
 
-        private string prefix;
+        private readonly string prefix;
         private System.Net.HttpListener listener;
 
         #endregion Fields

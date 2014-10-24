@@ -9,11 +9,11 @@ namespace MonoTorrent.Dht.Tasks
 {
     class GetPeersTask : Task
     {
-    	NodeId infoHash;
-    	DhtEngine engine;
+        readonly NodeId infoHash;
+        readonly DhtEngine engine;
         int activeQueries;
-        SortedList<NodeId, NodeId> closestNodes;
-        SortedList<NodeId, Node> queriedNodes;
+        readonly SortedList<NodeId, NodeId> closestNodes;
+        readonly SortedList<NodeId, Node> queriedNodes;
 
         internal SortedList<NodeId, Node> ClosestActiveNodes
         {

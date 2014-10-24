@@ -37,7 +37,7 @@ namespace MonoTorrent.Client.Messages.UdpTracker
 {
     public abstract class UdpTrackerMessage : Message
     {
-        private int action;
+        private readonly int action;
         private int transactionId;
 
         public int Action

@@ -7,7 +7,7 @@ namespace MonoTorrent.Dht
 {
     internal class MessageException : Exception
     {
-        private ErrorCode errorCode;
+        private readonly ErrorCode errorCode;
 
         public ErrorCode ErrorCode
         {

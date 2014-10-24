@@ -37,7 +37,7 @@ namespace MonoTorrent.Client.Messages.UdpTracker
 {
     class ScrapeResponseMessage : UdpTrackerMessage
     {
-        private List<ScrapeDetails> scrapes;
+        private readonly List<ScrapeDetails> scrapes;
 
         public override int ByteLength
         {

@@ -43,7 +43,7 @@ namespace MonoTorrent.Client
         #region Private Fields
 
         private int cleanedUpCount;
-        private Uri connectionUri;
+        private readonly Uri connectionUri;
         private EncryptionTypes encryption;
         private int failedConnectionAttempts;
         private int localPort;

@@ -62,7 +62,7 @@ namespace MonoTorrent.Client
             t.FixtureTeardown();
         }
 
-        AnnounceParameters announceparams = new AnnounceParameters(100, 50, int.MaxValue,
+        readonly AnnounceParameters announceparams = new AnnounceParameters(100, 50, int.MaxValue,
             MonoTorrent.Common.TorrentEvent.Completed,
             new InfoHash (new byte[] { 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5 }),
             false, new string('a', 20), null, 1515);

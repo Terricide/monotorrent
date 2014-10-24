@@ -43,7 +43,7 @@ namespace MonoTorrent.Client
     abstract class Mode
     {
         int webseedCount;
-        private TorrentManager manager;
+        private readonly TorrentManager manager;
 
 		public abstract TorrentState State
 		{

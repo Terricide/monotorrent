@@ -60,8 +60,8 @@ namespace MonoTorrent.Tracker
     }
     public class Trackable : ITrackable
     {
-        private InfoHash infoHash;
-        private string name;
+        private readonly InfoHash infoHash;
+        private readonly string name;
 
 
         public Trackable(InfoHash infoHash, string name)
@@ -94,7 +94,7 @@ namespace MonoTorrent.Tracker
 
     public class TrackerTestRig : IDisposable
     {
-        private Random r = new Random(1000);
+        private readonly Random r = new Random(1000);
 
         public CustomListener Listener;
         public Tracker Tracker;

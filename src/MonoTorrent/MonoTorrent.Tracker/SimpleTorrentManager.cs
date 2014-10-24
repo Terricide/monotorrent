@@ -47,15 +47,15 @@ namespace MonoTorrent.Tracker
     {
         #region Member Variables
 
-        private IPeerComparer comparer;
+        private readonly IPeerComparer comparer;
         private List<Peer> buffer = new List<Peer>();
-        private BEncodedNumber complete;
-        private BEncodedNumber incomplete;
-        private BEncodedNumber downloaded;
-        private Dictionary<object, Peer> peers;
-        private Random random;
-        private ITrackable trackable;
-        private Tracker tracker;
+        private readonly BEncodedNumber complete;
+        private readonly BEncodedNumber incomplete;
+        private readonly BEncodedNumber downloaded;
+        private readonly Dictionary<object, Peer> peers;
+        private readonly Random random;
+        private readonly ITrackable trackable;
+        private readonly Tracker tracker;
 
         #endregion Member Variables
 

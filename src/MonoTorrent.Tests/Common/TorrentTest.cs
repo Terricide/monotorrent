@@ -50,7 +50,7 @@ namespace MonoTorrent.Common
         //}
         private Torrent torrent;
         private long creationTime;
-        private System.Security.Cryptography.SHA1 sha = System.Security.Cryptography.SHA1.Create();
+        private readonly System.Security.Cryptography.SHA1 sha = System.Security.Cryptography.SHA1.Create();
 
         /// <summary>
         /// 

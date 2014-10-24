@@ -43,8 +43,8 @@ namespace MonoTorrent.Common
     {
         #region Member Variables
 
-        private int[] array;
-        private int length;
+        private readonly int[] array;
+        private readonly int length;
         private int trueCount;
 
         internal bool AllFalse

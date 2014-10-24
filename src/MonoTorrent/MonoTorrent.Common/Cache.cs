@@ -43,8 +43,8 @@ namespace MonoTorrent.Common
     class Cache<T> : ICache<T>
         where T : class, ICacheable, new()
     {
-        bool autoCreate;
-        Queue<T> cache;
+        readonly bool autoCreate;
+        readonly Queue<T> cache;
 
         public int Count
         {
@@ -83,7 +83,7 @@ namespace MonoTorrent.Common
 
     class SynchronizedCache<T> : ICache<T>
     {
-        ICache<T> cache;
+        readonly ICache<T> cache;
 
         public int Count
         {

@@ -54,7 +54,7 @@ namespace Mono.Math
         /// <summary>
         /// The data for this BigInteger
         /// </summary>
-        uint[] data;
+        readonly uint[] data;
 
         #endregion
 
@@ -495,8 +495,8 @@ namespace Mono.Math
 
         public sealed class ModulusRing
         {
-
-            BigInteger mod, constant;
+            readonly BigInteger mod;
+            readonly BigInteger constant;
 
             public ModulusRing(BigInteger modulus)
             {

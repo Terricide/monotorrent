@@ -42,10 +42,10 @@ namespace MonoTorrent.Client.Tracker
 {
     public class HTTPTracker : Tracker
     {
-        static Random random = new Random();
+        static readonly Random random = new Random();
         static readonly TimeSpan RequestTimeout = TimeSpan.FromSeconds(10);
 
-        Uri scrapeUrl;
+        readonly Uri scrapeUrl;
         string key;
         string TrackerId;
 

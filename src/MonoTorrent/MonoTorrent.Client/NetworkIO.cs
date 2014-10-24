@@ -60,15 +60,15 @@ namespace MonoTorrent.Client
         // so send in chunks of 2kB + a little so we do 8 transfers per piece.
         const int ChunkLength = 2048 + 32;
 
-        static Queue<AsyncIOState> receiveQueue = new Queue<AsyncIOState> ();
-        static Queue<AsyncIOState> sendQueue = new Queue<AsyncIOState> ();
+        static readonly Queue<AsyncIOState> receiveQueue = new Queue<AsyncIOState> ();
+        static readonly Queue<AsyncIOState> sendQueue = new Queue<AsyncIOState> ();
 
-        static ICache <AsyncConnectState> connectCache = new Cache <AsyncConnectState> (true).Synchronize ();
-        static ICache <AsyncIOState> transferCache = new Cache <AsyncIOState> (true).Synchronize ();
+        static readonly ICache <AsyncConnectState> connectCache = new Cache <AsyncConnectState> (true).Synchronize ();
+        static readonly ICache <AsyncIOState> transferCache = new Cache <AsyncIOState> (true).Synchronize ();
 
-        static AsyncCallback EndConnectCallback = EndConnect;
-        static AsyncCallback EndReceiveCallback = EndReceive;
-        static AsyncCallback EndSendCallback = EndSend;
+        static readonly AsyncCallback EndConnectCallback = EndConnect;
+        static readonly AsyncCallback EndReceiveCallback = EndReceive;
+        static readonly AsyncCallback EndSendCallback = EndSend;
 
         static NetworkIO()
         {

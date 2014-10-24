@@ -42,8 +42,8 @@ namespace MonoTorrent.Client
     {
         private const int port = 6771;
         
-        private UdpClient socket;
-        private IPEndPoint ep;
+        private readonly UdpClient socket;
+        private readonly IPEndPoint ep;
 
         public LocalPeerManager()
         {

@@ -49,7 +49,7 @@ namespace MonoTorrent.Client
     public class ClientEngine : IDisposable
     {
         internal static MainLoop MainLoop = new MainLoop("Client Engine Loop");
-        private static Random random = new Random();
+        private static readonly Random random = new Random();
         #region Global Constants
 
         // To support this I need to ensure that the transition from
@@ -86,21 +86,21 @@ namespace MonoTorrent.Client
         #region Member Variables
 
         internal static readonly BufferManager BufferManager = new BufferManager();
-        private ConnectionManager connectionManager;
+        private readonly ConnectionManager connectionManager;
         
         private IDhtEngine dhtEngine;
-        private DiskManager diskManager;
+        private readonly DiskManager diskManager;
         private bool disposed;
         private bool isRunning;
-        private PeerListener listener;
-        private ListenManager listenManager;         // Listens for incoming connections and passes them off to the correct TorrentManager
-        private LocalPeerManager localPeerManager;
-        private LocalPeerListener localPeerListener;
+        private readonly PeerListener listener;
+        private readonly ListenManager listenManager;         // Listens for incoming connections and passes them off to the correct TorrentManager
+        private readonly LocalPeerManager localPeerManager;
+        private readonly LocalPeerListener localPeerListener;
         private readonly string peerId;
-        private EngineSettings settings;
+        private readonly EngineSettings settings;
         private int tickCount;
-        private List<TorrentManager> torrents;
-        private ReadOnlyCollection<TorrentManager> torrentsReadonly;
+        private readonly List<TorrentManager> torrents;
+        private readonly ReadOnlyCollection<TorrentManager> torrentsReadonly;
         private RateLimiterGroup uploadLimiter;
         private RateLimiterGroup downloadLimiter;
 

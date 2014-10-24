@@ -38,8 +38,8 @@ namespace MonoTorrent.Client
     /// </summary>
     public abstract class PeersAddedEventArgs : TorrentEventArgs
     {
-        private int count;
-        private int total;
+        private readonly int count;
+        private readonly int total;
         
         #region Member Variables
 

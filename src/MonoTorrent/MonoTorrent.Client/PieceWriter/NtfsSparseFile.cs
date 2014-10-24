@@ -19,8 +19,8 @@ namespace MonoTorrent.Client
                 BeyondFinalZero = offset + count;
             }
 
-            public long FileOffset;
-            public long BeyondFinalZero;
+            public readonly long FileOffset;
+            public readonly long BeyondFinalZero;
         }
 
         private const int MAX_PATH = 260;

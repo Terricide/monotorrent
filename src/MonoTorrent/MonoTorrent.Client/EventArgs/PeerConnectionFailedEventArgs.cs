@@ -8,9 +8,9 @@ namespace MonoTorrent.Client
 {
     public class PeerConnectionFailedEventArgs : TorrentEventArgs
     {
-        private Peer peer;
-        private Direction connectionDirection;
-        private String message;
+        private readonly Peer peer;
+        private readonly Direction connectionDirection;
+        private readonly String message;
 
         /// <summary>
         /// Peer from which this event happened

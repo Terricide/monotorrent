@@ -45,7 +45,7 @@ namespace MonoTorrent.TorrentWatcher
         {
             get { return this.torrentPath; }
         }
-        private string torrentPath;
+        private readonly string torrentPath;
 
         #endregion
 

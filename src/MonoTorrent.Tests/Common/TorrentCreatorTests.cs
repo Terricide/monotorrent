@@ -29,8 +29,8 @@ namespace MonoTorrent.Common
         private int PieceLength = 64 * 1024;
         private string Publisher = "My Publisher";
         private string PublisherUrl = "www.mypublisher.com";
-        private BEncodedString CustomKey = "Custom Key";
-        private BEncodedString CustomValue = "My custom value";
+        private readonly BEncodedString CustomKey = "Custom Key";
+        private readonly BEncodedString CustomValue = "My custom value";
 
         RawTrackerTiers announces;
         private TorrentCreator creator;

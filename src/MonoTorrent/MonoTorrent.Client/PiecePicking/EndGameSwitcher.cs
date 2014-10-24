@@ -41,13 +41,13 @@ namespace MonoTorrent.Client
         const int Threshold = 20;
 
         BitField bitfield;
-        int blocksPerPiece;
+        readonly int blocksPerPiece;
         bool inEndgame;
-        PiecePicker endgame;
+        readonly PiecePicker endgame;
         BitField endgameSelector;
         TorrentFile[] files;
-        PiecePicker standard;
-		TorrentManager torrentManager;
+        readonly PiecePicker standard;
+        readonly TorrentManager torrentManager;
 
         PiecePicker ActivePicker
         {

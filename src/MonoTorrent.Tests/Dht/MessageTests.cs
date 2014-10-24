@@ -17,10 +17,10 @@ namespace MonoTorrent.Dht
         //    MessageTests t = new MessageTests();
         //    t.GetPeersResponseEncode();
         //}
-        private NodeId id = new NodeId(Encoding.UTF8.GetBytes("abcdefghij0123456789"));
-        private NodeId infohash = new NodeId(Encoding.UTF8.GetBytes("mnopqrstuvwxyz123456"));
-        private BEncodedString token = "aoeusnth";
-        private BEncodedString transactionId = "aa";
+        private readonly NodeId id = new NodeId(Encoding.UTF8.GetBytes("abcdefghij0123456789"));
+        private readonly NodeId infohash = new NodeId(Encoding.UTF8.GetBytes("mnopqrstuvwxyz123456"));
+        private readonly BEncodedString token = "aoeusnth";
+        private readonly BEncodedString transactionId = "aa";
 
         private QueryMessage message;
 

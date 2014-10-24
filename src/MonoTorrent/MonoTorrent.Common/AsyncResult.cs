@@ -37,12 +37,12 @@ namespace MonoTorrent.Common
     {
         #region Member Variables
 
-        private object asyncState;
-        private AsyncCallback callback;
+        private readonly object asyncState;
+        private readonly AsyncCallback callback;
         private bool completedSyncronously;
         private bool isCompleted;
         private Exception savedException;
-        private ManualResetEvent waitHandle;
+        private readonly ManualResetEvent waitHandle;
 
         #endregion Member Variables
 

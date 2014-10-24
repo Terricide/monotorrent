@@ -47,7 +47,7 @@ namespace MonoTorrent.Tracker.Listeners
 
         private System.Net.Sockets.UdpClient listener;
         private IPEndPoint endpoint;
-        private Dictionary<IPAddress, long> connectionIDs;
+        private readonly Dictionary<IPAddress, long> connectionIDs;
         private long curConnectionID;
         //TODO system to clear old connectionID...
         public override bool Running

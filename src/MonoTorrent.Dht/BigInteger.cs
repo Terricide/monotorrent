@@ -55,7 +55,7 @@ namespace MonoTorrent.Dht
         /// <summary>
         /// The data for this BigInteger
         /// </summary>
-        uint[] data;
+        readonly uint[] data;
 
         #endregion
 
@@ -503,8 +503,8 @@ namespace MonoTorrent.Dht
 
         public sealed class ModulusRing
         {
-
-            BigInteger mod, constant;
+            readonly BigInteger mod;
+            readonly BigInteger constant;
 
             public ModulusRing(BigInteger modulus)
             {

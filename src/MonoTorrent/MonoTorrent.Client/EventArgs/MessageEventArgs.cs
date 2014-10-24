@@ -49,7 +49,7 @@ namespace MonoTorrent.Client
         {
             get { return this.message; }
         }
-        private PeerMessage message;
+        private readonly PeerMessage message;
 
         /// <summary>
         /// The direction of the message (outgoing/incoming)
@@ -58,13 +58,13 @@ namespace MonoTorrent.Client
         {
             get { return this.direction; }
         }
-        private Direction direction;
+        private readonly Direction direction;
 
         public PeerId ID
         {
             get { return this.id; }
         }
-        private PeerId id;
+        private readonly PeerId id;
 
         #endregion
 

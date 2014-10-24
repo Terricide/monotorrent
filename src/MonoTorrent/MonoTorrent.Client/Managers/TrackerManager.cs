@@ -49,8 +49,8 @@ namespace MonoTorrent.Client.Tracker
     public class TrackerManager : IEnumerable<TrackerTier>
     {
         #region Member Variables
-        private TorrentManager manager;
-        IList<TrackerTier> tierList;
+        private readonly TorrentManager manager;
+        readonly IList<TrackerTier> tierList;
 
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace MonoTorrent.Client.Tracker
         /// <summary>
         /// The infohash for the torrent
         /// </summary>
-        private InfoHash infoHash;
+        private readonly InfoHash infoHash;
 
 
         /// <summary>
@@ -101,7 +101,8 @@ namespace MonoTorrent.Client.Tracker
         {
             get { return tierList; }
         }
-        List<TrackerTier> trackerTiers;
+
+        readonly List<TrackerTier> trackerTiers;
 
         #endregion
 

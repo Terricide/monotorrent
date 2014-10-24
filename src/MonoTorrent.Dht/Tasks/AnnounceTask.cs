@@ -9,9 +9,9 @@ namespace MonoTorrent.Dht.Tasks
     class AnnounceTask : Task
     {
         private int activeAnnounces;
-        private NodeId infoHash;
-        private DhtEngine engine;
-        private int port;
+        private readonly NodeId infoHash;
+        private readonly DhtEngine engine;
+        private readonly int port;
 
         public AnnounceTask(DhtEngine engine, InfoHash infoHash, int port)
             : this(engine, new NodeId(infoHash), port)

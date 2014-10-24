@@ -16,8 +16,8 @@ namespace MonoTorrent.Common
 
         #region Private Fields
 
-        private int count;
-        private byte[] hashData;
+        private readonly int count;
+        private readonly byte[] hashData;
 
         #endregion Private Fields
 

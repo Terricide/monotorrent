@@ -45,7 +45,7 @@ namespace MonoTorrent.Tracker
         // FIXME: Expose these as configurable options
         internal static readonly int DefaultWanted = 30;
         internal static readonly bool UseTrackerKey = false;
-        private IPEndPoint clientAddress;
+        private readonly IPEndPoint clientAddress;
         private bool isValid;
         InfoHash infoHash;
 

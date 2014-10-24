@@ -13,7 +13,7 @@ namespace MonoTorrent.Client.Tracker
    public class UdpTracker : Tracker
    {
        private long connectionId;
-       private UdpClient tracker;
+       private readonly UdpClient tracker;
        private IPEndPoint endpoint;
        bool hasConnected;
        bool amConnecting;
@@ -391,7 +391,7 @@ namespace MonoTorrent.Client.Tracker
 
        class ConnectAnnounceState : UdpTrackerAsyncState
        {
-           public AnnounceParameters Parameters;
+           public readonly AnnounceParameters Parameters;
 
            public ConnectAnnounceState(AnnounceParameters parameters, AsyncCallback callback, object state)
                : base (callback, state)
@@ -402,7 +402,7 @@ namespace MonoTorrent.Client.Tracker
 
        class ConnectScrapeState : UdpTrackerAsyncState
        {
-           public ScrapeParameters Parameters;
+           public readonly ScrapeParameters Parameters;
 
            public ConnectScrapeState(ScrapeParameters parameters, AsyncCallback callback, object state)
                : base (callback, state)

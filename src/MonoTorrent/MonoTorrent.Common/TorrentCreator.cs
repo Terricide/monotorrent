@@ -85,7 +85,7 @@ namespace MonoTorrent.Common {
 
 
         TorrentCreatorAsyncResult asyncResult;
-        List<string> getrightHttpSeeds;
+        readonly List<string> getrightHttpSeeds;
         bool storeMD5;
 
         public List<string> GetrightHttpSeeds

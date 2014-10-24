@@ -43,7 +43,7 @@ namespace MonoTorrent.Client
 
     public class RangeCollection
     {
-        List<AddressRange> ranges = new List<AddressRange>();
+        readonly List<AddressRange> ranges = new List<AddressRange>();
 
         public int Count
         {

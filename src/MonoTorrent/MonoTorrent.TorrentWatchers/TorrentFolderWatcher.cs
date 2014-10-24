@@ -45,8 +45,8 @@ namespace MonoTorrent.TorrentWatcher
         #region Member Variables
 
         private FileSystemWatcher watcher;
-        private string torrentDirectory;
-        private string watchFilter;
+        private readonly string torrentDirectory;
+        private readonly string watchFilter;
 
         #endregion
 

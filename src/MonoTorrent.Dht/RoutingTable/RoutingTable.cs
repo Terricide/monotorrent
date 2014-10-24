@@ -44,7 +44,7 @@ namespace MonoTorrent.Dht
         public event EventHandler<NodeAddedEventArgs> NodeAdded;
 
         private readonly Node localNode;
-        private List<Bucket> buckets = new List<Bucket>();
+        private readonly List<Bucket> buckets = new List<Bucket>();
 
 
         internal List<Bucket> Buckets

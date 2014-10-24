@@ -38,7 +38,7 @@ namespace MonoTorrent.Common
 
         private long total;
         private int speed;
-        private int[] speeds;
+        private readonly int[] speeds;
         private int speedsIndex;
         private DateTime lastUpdated;
         private long tempRecvCount;

@@ -45,7 +45,7 @@ namespace MonoTorrent.Client
     {
         private class DelegateTask : ICacheable
         {
-            private ManualResetEvent handle;
+            private readonly ManualResetEvent handle;
             private bool isBlocking;
             private MainLoopJob job;
             private object jobResult;
@@ -143,10 +143,10 @@ namespace MonoTorrent.Client
             }
         }
 
-        TimeoutDispatcher dispatcher = new TimeoutDispatcher();
-        AutoResetEvent handle = new AutoResetEvent(false);
-        ICache<DelegateTask> cache = new Cache<DelegateTask>(true).Synchronize();
-        Queue<DelegateTask> tasks = new Queue<DelegateTask>();
+        readonly TimeoutDispatcher dispatcher = new TimeoutDispatcher();
+        readonly AutoResetEvent handle = new AutoResetEvent(false);
+        readonly ICache<DelegateTask> cache = new Cache<DelegateTask>(true).Synchronize();
+        readonly Queue<DelegateTask> tasks = new Queue<DelegateTask>();
         internal Thread thread;
 
         public MainLoop(string name)

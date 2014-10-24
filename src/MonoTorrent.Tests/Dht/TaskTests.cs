@@ -24,7 +24,7 @@ namespace MonoTorrent.Dht
         DhtEngine engine;
         TestListener listener;
         Node node;
-        BEncodedString transactionId = "aa";
+        readonly BEncodedString transactionId = "aa";
         ManualResetEvent handle;
 
         [SetUp]

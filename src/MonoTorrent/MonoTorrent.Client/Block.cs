@@ -41,10 +41,10 @@ namespace MonoTorrent.Client
     {
         #region Private Fields
 
-        private Piece piece;
-        private int startOffset;
+        private readonly Piece piece;
+        private readonly int startOffset;
         private PeerId requestedOff;
-        private int requestLength;
+        private readonly int requestLength;
         private bool requested;
         private bool received;
         private bool written;

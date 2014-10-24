@@ -10,10 +10,10 @@ namespace MonoTorrent.Client
 	{
 		internal ManualResetEvent hashingWaitHandle;
 
-		bool autostart;
-		bool filesExist;
+	    readonly bool autostart;
+	    readonly bool filesExist;
 		int index = -1;
-        MainLoopResult pieceCompleteCallback;
+	    readonly MainLoopResult pieceCompleteCallback;
 
 		public override TorrentState State
 		{

@@ -39,11 +39,11 @@ namespace MonoTorrent.Dht.Messages
 {
     class AnnouncePeer : QueryMessage
     {
-        private static BEncodedString InfoHashKey = "info_hash";
-        private static BEncodedString QueryName = "announce_peer";
-        private static BEncodedString PortKey = "port";
-        private static BEncodedString TokenKey = "token";
-        private static ResponseCreator responseCreator = delegate(BEncodedDictionary d, QueryMessage m) { return new AnnouncePeerResponse(d, m); };
+        private static readonly BEncodedString InfoHashKey = "info_hash";
+        private static readonly BEncodedString QueryName = "announce_peer";
+        private static readonly BEncodedString PortKey = "port";
+        private static readonly BEncodedString TokenKey = "token";
+        private static readonly ResponseCreator responseCreator = delegate(BEncodedDictionary d, QueryMessage m) { return new AnnouncePeerResponse(d, m); };
 
         internal NodeId InfoHash
         {
