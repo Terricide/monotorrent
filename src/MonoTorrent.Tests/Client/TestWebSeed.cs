@@ -79,8 +79,10 @@ namespace MonoTorrent.Client
         [TearDown]
         public void TearDown()
         {
-            listener.Close();
             rig.Dispose();
+            listener.Close();
+            rig = null;
+            listener = null;
         }
 
         [Test]
@@ -201,7 +203,7 @@ namespace MonoTorrent.Client
                 }
             }
 
-            Uri baseUri = new Uri(this.listenerURL);
+            Uri baseUri = new Uri(listenerURL);
             baseUri = new Uri(baseUri, rig.Manager.Torrent.Name + "/");
             if (rig.Manager.Torrent.Files.Length > 1)
             {
