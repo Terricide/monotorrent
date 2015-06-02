@@ -45,10 +45,10 @@ namespace MonoTorrent.Client
         int webseedCount;
         private TorrentManager manager;
 
-		public abstract TorrentState State
-		{
-			get;
-		}
+        public abstract TorrentState State
+        {
+            get;
+        }
 
         protected TorrentManager Manager
         {
@@ -128,16 +128,16 @@ namespace MonoTorrent.Client
             return ShouldConnect(peer.Peer);
         }
 
-		public virtual bool ShouldConnect(Peer peer)
+        public virtual bool ShouldConnect(Peer peer)
         {
             return true;
         }
 
-		public virtual bool CanHashCheck
-		{
-			get { return false; }
-		}
-		
+        public virtual bool CanHashCheck
+        {
+            get { return false; }
+        }
+
         protected virtual void HandleGenericExtensionMessage(PeerId id, ExtensionMessage extensionMessage)
         {
             // Do nothing
@@ -167,7 +167,7 @@ namespace MonoTorrent.Client
             if (id.Peer.PeerId != message.PeerId)
             {
                 Logger.Log(id.Connection, "HandShake.Handle - Invalid peerid");
-                throw new TorrentException("Supplied PeerID didn't match the one the tracker gave us");
+                throw new TorrentException("Supplied PeerID didn't match the one the tracker gave us : " + id.Peer.PeerId + " != " +  message.PeerId);
             }
 
             // Attempt to parse the application that the peer is using
@@ -458,7 +458,7 @@ namespace MonoTorrent.Client
         {
             PeerId id;
 
-            //Execute iniitial logic for individual peers
+            //Execute initial logic for individual peers
             if (counter % (1000 / ClientEngine.TickLength) == 0) {   // Call it every second... ish
                 manager.Monitor.Tick();
                 manager.UpdateLimiters ();
@@ -561,11 +561,11 @@ namespace MonoTorrent.Client
                     id.Encryptor = new PlainTextEncryption();
                     id.Decryptor = new PlainTextEncryption();
                     id.IsChoking = false;
-					id.AmInterested = !manager.Complete;
+                    id.AmInterested = !manager.Complete;
                     id.Connection = connection;
-					id.ClientApp = new Software(id.PeerID);
+                    id.ClientApp = new Software(id.PeerID);
                     manager.Peers.ConnectedPeers.Add(id);
-					manager.RaisePeerConnected(new PeerConnectionEventArgs(manager, id, Direction.Outgoing));
+                    manager.RaisePeerConnected(new PeerConnectionEventArgs(manager, id, Direction.Outgoing));
                     PeerIO.EnqueueReceiveMessage (id.Connection, id.Decryptor, Manager.DownloadLimiter, id.Monitor, id.TorrentManager, id.ConnectionManager.messageReceivedCallback, id);
                 }
 
@@ -617,7 +617,8 @@ namespace MonoTorrent.Client
         {
             for (int i = 0; i < manager.Peers.ConnectedPeers.Count; i++)
             {
-                if (manager.Peers.ConnectedPeers[i].Connection == null)
+                var connectedPeer = manager.Peers.ConnectedPeers[i]; 
+                if (connectedPeer.Connection == null)
                     continue;
 
                 MessageBundle bundle = new MessageBundle();
@@ -625,11 +626,11 @@ namespace MonoTorrent.Client
                 foreach (int pieceIndex in manager.finishedPieces)
                 {
                     // If the peer has the piece already, we need to recalculate his "interesting" status.
-                    bool hasPiece = manager.Peers.ConnectedPeers[i].BitField[pieceIndex];
+                    bool hasPiece = connectedPeer.BitField[pieceIndex];
                     if (hasPiece)
                     {
                         bool isInteresting = manager.PieceManager.IsInteresting(manager.Peers.ConnectedPeers[i]);
-                        SetAmInterestedStatus(manager.Peers.ConnectedPeers[i], isInteresting);
+                        SetAmInterestedStatus(connectedPeer, isInteresting);
                     }
 
                     // Check to see if have supression is enabled and send the have message accordingly
@@ -637,7 +638,7 @@ namespace MonoTorrent.Client
                         bundle.Messages.Add(new HaveMessage(pieceIndex));
                 }
 
-                manager.Peers.ConnectedPeers[i].Enqueue(bundle);
+                connectedPeer.Enqueue(bundle);
             }
             manager.finishedPieces.Clear();
         }
